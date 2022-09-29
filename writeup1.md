@@ -16,5 +16,5 @@ PORT    STATE SERVICE
 ## dirb 
 
 DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response.
-![ alt text for screen readers](imags/dirb_scanHTTP.png "dirb_scanHTTP")
-![ alt text for screen readers](imags/dirb_scanHTTPS.png "dirb_scanHTTP")
+![ alt text for screen readers](imgs/dirb_scanHTTP.png "dirb_scanHTTP")
+![ alt text for screen readers](imgs/dirb_scanHTTPS.png "dirb_scanHTTP")
