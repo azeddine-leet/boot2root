@@ -31,3 +31,15 @@ reading the logs , a line says: 'Failed password for invalid user !q\]Ej?*5K5cy*
     ```
     - it works , i also got the email from the user profile
     email: laurie@borntosec.net
+
+### The same password was used to log in to webmail
+    user: laurie@borntosec.net
+    password: !q\]Ej?*5K5cy*AJ
+
++ on the inbox i there's a mail contain credential to a databases 
+![ alt text for screen readers](imgs/db_access.png "db credentials")
+
+## access phpMyAdmin
+
+login: root
+password: Fg-'kKXBj87E:aJ$
