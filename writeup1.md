@@ -18,3 +18,16 @@ PORT    STATE SERVICE
 DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response.
 ![ alt text for screen readers](imgs/dirb_scanHTTP.png "dirb_scanHTTP")
 ![ alt text for screen readers](imgs/dirb_scanHTTPS.png "dirb_scanHTTP")
+
+## 
+from threats posted on the forum i found an intersting one "login problem"
+reading the logs , a line says: 'Failed password for invalid user !q\]Ej?*5K5cy*AJ from 161.202.39.38 port 57764 ssh2'
+    - sounds like someone write a password in username field.
+    - tried to connect using ssh users form forum and this password (didn't work)
+    - tried to log in to forum with:
+    ```
+    username: lmezard
+    password: !q\]Ej?*5K5cy*AJ
+    ```
+    - it works , i also got the email from the user profile
+    email: laurie@borntosec.net
