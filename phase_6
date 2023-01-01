@@ -1,0 +1,59 @@
+void phase_6(char *line)
+{
+  int *piVar1;
+  int i;
+  int *piVar3;
+  int j;
+  undefined1 *local_38;
+  int *local_34 [6];
+  int numbers[6];
+  
+  local_38 = node1;
+  read_six_numbers(line, numbers);
+  j = 0;
+  do {
+    i = j;
+    // all numbers - 1 should be less or equal than 5
+    if (5 < numbers[j] - 1) {
+      explode_bomb();
+    }
+    // all numbers should be unique, not a number should appear twice
+    while (i = i + 1, i < 6) {
+      if (numbers[j] == numbers[i]) {
+        explode_bomb();
+      }
+    }
+    j = j + 1;
+  } while (j < 6);
+  j = 0;
+  do {
+    i = 1;
+    piVar3 = (int *)local_38;
+    if (1 < numbers[j]) {
+      do {
+        piVar3 = (int *)piVar3[2];
+        i = i + 1;
+      } while (i < numbers[j]);
+    }
+    local_34[j] = piVar3;
+    j = j + 1;
+  } while (j < 6);
+  j = 1;
+  piVar3 = local_34[0];
+  do {
+    piVar1 = local_34[j];
+    piVar3[2] = (int)piVar1;
+    j = j + 1;
+    piVar3 = piVar1;
+  } while (j < 6);
+  piVar1[2] = 0;
+  j = 0;
+  do {
+    if (*local_34[0] < *(int *)local_34[0][2]) {
+      explode_bomb();
+    }
+    local_34[0] = (int *)local_34[0][2];
+    j = j + 1;
+  } while (j < 5);
+  return;
+}
