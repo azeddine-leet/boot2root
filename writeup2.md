@@ -4,7 +4,7 @@ After gaining access to vulnirable machine as chown in writeup1, and as part of 
 ```
 Linux BornToSecHackMe 3.2.0-91-generic-pae #129-Ubuntu SMP Wed Sep 9 11:27:47 UTC 2015 i686 i686 i386 GNU/Linux
 ```
-2016 and below versions are vulnerable to dirty cow vulnerability.
+with some research this kernel version vulnerable to dirty cow vulnerability.
 #### + download the exploit:
 ```
 https://raw.githubusercontent.com/firefart/dirtycow/master/dirty.c
