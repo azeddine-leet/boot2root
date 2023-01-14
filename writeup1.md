@@ -1,25 +1,28 @@
-## nmap
-scan the network 10.11.0.0/16
+## nmap:
+* scan the network :
 ```
-Nmap scan report for 10.11.100.94
-Host is up (0.0013s latency).
+┌──(kali㉿kali)-[~]
+└─$ nmap --open -sV 10.11.100.0/24
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-01-14 07:30 EST
+Nmap scan report for 10.11.100.71
+Host is up (0.00061s latency).
 Not shown: 994 closed tcp ports (conn-refused)
-PORT    STATE SERVICE
-21/tcp  open  ftp
-22/tcp  open  ssh
-80/tcp  open  http
-143/tcp open  imap
-443/tcp open  https
-993/tcp open  imaps
+PORT    STATE SERVICE  VERSION
+21/tcp  open  ftp      vsftpd 2.0.8 or later
+22/tcp  open  ssh      OpenSSH 5.9p1 Debian 5ubuntu1.7 (Ubuntu Linux; protocol 2.0)
+80/tcp  open  http     Apache httpd 2.2.22 ((Ubuntu))
+143/tcp open  imap     Dovecot imapd
+443/tcp open  ssl/http Apache httpd 2.2.22
+993/tcp open  ssl/imap Dovecot imapd
+Service Info: Host: 127.0.1.1; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
-## dirb 
-### commad:
+## dirb :
 ```
 gobuster  dir --url https://{IP} --wordlist /usr/share/wordlists/dirb/common.txt --no-tls-validation
 ```
 
-DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response.
+* DIRB IS a Web Content Scanner. It looks for existing (and/or hidden) Web Objects. It basically works by launching a dictionary basesd attack against a web server and analizing the response.
 ![ alt text for screen readers](imgs/dirb_scanHTTP.png "dirb_scanHTTP")
 ![ alt text for screen readers](imgs/dirb_scanHTTPS.png "dirb_scanHTTP")
 
@@ -68,6 +71,7 @@ encode the pyload and pass it to cmd in : https://IP/forum/templates_c/pyload.ph
 
 
 ## list users 
+```
 laurie@borntosec.net@BornToSecHackMe:~$ getent passwd {1000..60000}
 getent passwd {1000..60000}
 ft_root:x:1000:1000:ft_root,,,:/home/ft_root:/bin/bash
@@ -76,7 +80,7 @@ laurie@borntosec.net:x:1002:1002:Laurie,,,:/home/laurie@borntosec.net:/bin/bash
 laurie:x:1003:1003:,,,:/home/laurie:/bin/bash
 thor:x:1004:1004:,,,:/home/thor:/bin/bash
 zaz:x:1005:1005:,,,:/home/zaz:/bin/bash
-
+```
 
 $ cat /home/LOOKATME/password
 cat /home/LOOKATME/password

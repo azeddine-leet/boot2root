@@ -1,11 +1,12 @@
 ## Dirty COW (CVE-2016-5195)
 
-> After gaining access to vulnerable machine as chown in writeup1, and as part of machine discovery i checked the kernel version with "uname -a".
+> After gaining access to the vulnerable machine as chown in writeup1, and as part of machine discovery i checked the kernel version with "uname -a".
 ```
 Linux BornToSecHackMe 3.2.0-91-generic-pae #129-Ubuntu SMP Wed Sep 9 11:27:47 UTC 2015 i686 i686 i386 GNU/Linux
 ```
-> with some research this kernel version vulnerable to dirty cow vulnerability.
-> **Dirty COW** (Copy-On-Write) is a security vulnerability that was discovered in 2016 in the Linux kernel. It allows a local attacker to gain unauthorized access to certain read-only memory mappings, such as those belonging to the system or other users.
+> * With some research this kernel version vulnerable to dirty cow vulnerability.
+
+> **Dirty COW** (Copy-On-Write): is a security vulnerability that was discovered in 2016 in the Linux kernel. It allows a local attacker to gain unauthorized access to certain read-only memory mappings, such as those belonging to the system or other users.
 > 
 > The vulnerability arises because of a race condition in the kernel's memory management. Specifically, the kernel allows multiple processes to map the same piece of memory into their own address spaces, and then keep a reference count of how many processes are currently using the mapping. When a process wants to modify the memory, it is supposed to create a private copy for itself, which is known as copy-on-write.
 > 
