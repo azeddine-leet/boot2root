@@ -1,6 +1,6 @@
 ## Dirty COW (CVE-2016-5195)
 
-> After gaining access to the vulnerable machine as chown in writeup1, and as part of machine discovery i checked the kernel version with "uname -a".
+> After gaining access to the vulnerable machine as shown in writeup1, and as part of machine discovery i checked the kernel version with "uname -a".
 ```
 Linux BornToSecHackMe 3.2.0-91-generic-pae #129-Ubuntu SMP Wed Sep 9 11:27:47 UTC 2015 i686 i686 i386 GNU/Linux
 ```
